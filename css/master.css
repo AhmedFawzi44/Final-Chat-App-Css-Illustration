@@ -378,7 +378,7 @@ img:hover {
         background-image: linear-gradient(var(--Light-Magenta), var(--Light-Violet));
     }
 
-    .background-2 {
+    /* .background-2 {
         position: absolute;
         border-radius: 50% 50% 0 0;
         bottom: 0;
@@ -387,7 +387,7 @@ img:hover {
         width: 90vw;
         background-color: #F9F4FA;
         z-index: -3;
-    }
+    } */
 
     .design {
         display: block;
