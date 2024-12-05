@@ -1,0 +1,434 @@
+/*  تظبيط النوتش في الشاشتين*/
+/* تعديل حجم الايفون في الشاشة الكبيرة */
+/* عمل آيفون مصغر */
+/* تظبيط الاسم */
+/* تظبيط الأيقونات */
+/* make Variables to Padding & Margin */
+
+/* phone-width: 246px */
+/* left-space: 308px */
+/* left-space: 257px */
+/* bio: 462px */
+
+/* phone-width: 250px in mobile*/
+/* left-space: 62.5px */
+/* left-space: 62.5x */
+/* notch 130*18 */
+
+/* ليه البودي لما كان 100 في المية منفعش */
+/* تظبيط طول الشاشات ابن الوسخة */
+/* ليه هما تحت بعض رغم اني مش عامل بلوك */
+/* ليه لما استخدمت اي دي اشتغل الامر بتاع المارجن علي اليمين ولما كان كلاس مشتغلش في الصورة اللي علي اليمين؟ */
+/* في ظل ما الكلاس شغال علي الاوامر التانية */
+/* ليه الرسالة مش ثابتة في مكانها زي الباقيين لما بعمل زوم */
+/* ازاي احل مشكلة ان العناصر طولها بيختلف مع الزوم */
+/* flex-wrap: wrap; */
+/* متخليش عنصر من البودي يبقي ابسلوت عشان البودي هيكون طوله اقل من الصفحة */
+* {
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+}
+
+:root {
+    /* (sub-heading at the top of the app UI) */
+    --Pale-Violet: hsl(276, 100%, 81%);
+    /* (chat on the left): */
+    --Moderate-Violet: hsl(276, 55%, 52%);
+    /* (chat on the right) */
+    --Desaturated-Dark-Violet: hsl(271, 15%, 43%);
+    /* (placeholder text) */
+    --Grayish-Blue: hsl(206, 6%, 79%);
+    /* (main heading) */
+    --Very-Dark-Desaturated-Violet: hsl(271, 36%, 24%);
+    /* (paragraph) */
+    --Dark-Grayish-Violet: hsl(270, 7%, 64%);
+    /* Gradient */
+    --Light-Magenta: hsl(293, 100%, 63%);
+    --Light-Violet: hsl(264, 100%, 61%);
+
+    --White: hsl(0, 0%, 100%);
+    /* (app background) */
+    --Light-Grayish-Violet: hsl(270, 20%, 96%);
+    /* (submit button background) */
+    --Very-Dark-Desaturated-Violet: hsl(271, 36%, 24%);
+    /* (radio button outline) */
+    --Very-Light-Magenta: hsl(289, 100%, 72%);
+
+    --space: 8px;
+    --barrier: 12px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    background-color: #FAFAFA;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: -100px;
+    border-radius: 0 0 50% 50%;
+    height: 85vh;
+    width: 35vw;
+    background-image: linear-gradient(var(--Light-Magenta), var(--Light-Violet));
+}
+
+/* .background-2{
+    position: absolute;
+    bottom: 0;
+    right: -100px;
+    border-radius: 0 0 50% 50%;
+    height: 50vh;
+    width: 50vw;
+    background-image: linear-gradient(var(--Light-Magenta), var(--Light-Violet));
+} */
+
+.page {
+    font-family: "Rubik", sans-serif;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    overflow: hidden;
+}
+
+img:hover {
+    cursor: pointer;
+}
+
+.design {
+    display: grid;
+    grid-template-columns: 250px 660px;
+    justify-content: space-between;
+    align-content: center;
+    height: fit-content;
+    position: relative;
+}
+
+.iphone {
+    border: 10px solid white;
+    /* padding: 20px; */
+    height: 515px;
+    position: relative;
+    border-radius: 30px;
+    background-color: var(--Light-Grayish-Violet);
+    box-shadow: 20px 26px 30px -25px var(--Dark-Grayish-Violet);
+    width: 250px;
+}
+
+.iphone::before {
+    content: "";
+    width: 130px;
+    height: 18px;
+    background-color: white;
+    position: absolute;
+    left: 50px;
+    top: -1px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    z-index: 2;
+}
+
+.bio {
+    margin: auto 0 auto 100px;
+    /* height: 200px; */
+    z-index: 2;
+    /* width: 650px; */
+}
+
+.bio .title {
+    font-size: 45px;
+    color: var(--Very-Dark-Desaturated-Violet);
+    font-weight: 500;
+}
+
+.bio p {
+    color: var(--Dark-Grayish-Violet);
+    line-height: 30px;
+    font-size: 20px;
+}
+
+
+.seg {
+    background-image: linear-gradient(to right, var(--Light-Violet), var(--Light-Magenta));
+    height: 70px;
+    z-index: 1;
+    display: flex;
+    position: relative;
+    border-radius: 20px 20px 5px 5px;
+}
+
+.customer {
+    display: grid;
+    grid-template-columns: 30px 100px;
+    transform: translate(27px, 27px);
+}
+
+.customer img {
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 25px;
+    height: 25px;
+}
+
+.customer .id {
+    height: 40px;
+    margin-left: 5px;
+}
+
+.customer .id div {
+    font-weight: 400;
+    color: white;
+    font-size: 13px;
+}
+
+.customer p {
+    color: var(--Grayish-Blue);
+    font-size: 9px;
+    font-weight: 400;
+    margin: 0 0 5px 0;
+}
+
+#back {
+    width: 10px;
+    height: 10px;
+    top: 35px;
+    left: 8px;
+    position: absolute;
+}
+
+#dots {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 36px;
+    right: 10px;
+}
+
+.texts {
+    height: 365px;
+}
+
+.message {
+    background-color: #ECE6F2;
+    border-radius: 12px;
+    padding: 7px;
+    width: 60%;
+    font-size: 9px;
+    color: var(--Moderate-Violet);
+    transform: translate(10px);
+    margin-top: var(--space);
+}
+
+#m-three {
+    margin-top: var(--barrier);
+}
+
+.dog-images {
+    margin-top: var(--barrier);
+    transform: translate(70px);
+    width: 155px;
+    height: 45px;
+}
+
+.dog-images img {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    margin: 0 2px;
+}
+
+#img-three {
+    margin-right: 0;
+}
+
+.replies {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 60%;
+    transform: translatex(87px);
+}
+
+.reply {
+    background-color: white;
+    width: fit-content;
+    padding: 7px;
+    border-radius: 12px;
+    font-size: 9px;
+    color: var(--Desaturated-Dark-V);
+    margin-top: var(--space);
+}
+
+
+.voice {
+    display: grid;
+    grid-template-columns: 15px 119px 32px;
+    width: 75%;
+    height: 35px;
+    background-image: linear-gradient(to right, var(--Light-Magenta), var(--Light-Violet));
+    border-radius: 12px 12px 12px 5px;
+    transform: translatex(10px);
+    justify-content: space-around;
+    align-items: center;
+    margin: var(--space) 0 0;
+}
+
+.voice img {
+    width: 15px;
+    height: 15px;
+    transform: translate(10px);
+}
+
+.voice div {
+    color: var(--Grayish-Blue);
+    font-size: 9px;
+    transform: translate(30px);
+}
+
+.voice p {
+    font-weight: 700;
+    color: white;
+    font-size: 12px;
+    margin: 0;
+}
+
+.send {
+    position: relative;
+}
+
+#send {
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    width: 90%;
+    transform: translate(10px, 5px);
+    border: none;
+}
+
+#send::placeholder {
+    color: var(--Grayish-Blue);
+    font-size: 9px;
+    transform: translate(10px);
+}
+
+#arrow {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.attribution {
+    position: absolute;
+    left: 50%;
+    bottom: -100px;
+    transform: translate(-50%);
+    width: 420px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (max-width:1400px) {
+    .background {
+        left: -200px;
+        width: 45vw;
+    }
+}
+
+@media (max-width:992px) {
+    .design {
+        grid-template-columns: 250px 460px;
+    }
+    .background {
+        width: 52vw;
+    }
+
+}
+
+@media (max-width:768px) {
+.page{
+    height: auto;
+    overflow: visible;
+}
+    .background {
+        position: absolute;
+        top: 0;
+        border-radius: 0 0 50% 50%;
+        left: -42.5vw;
+        height: 50vh;
+        width: 85vw;
+        background-image: linear-gradient(var(--Light-Magenta), var(--Light-Violet));
+    }
+
+    .background-2 {
+        position: absolute;
+        border-radius: 50% 50% 0 0;
+        bottom: 0;
+        right: -45vw;
+        height: 65vh;
+        width: 90vw;
+        background-color: #F9F4FA;
+        z-index: -3;
+    }
+
+    .design {
+        display: block;
+    }
+
+    .bio {
+        margin: 100px auto 0;
+        text-align: center;
+        max-width: 380px;
+    }
+
+    .iphone {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        margin-top: 80px;
+    }
+
+    .attribution {
+        text-align: center;
+        margin: 10px auto;
+        bottom: -100px;
+        padding: 30px 10px;
+        margin: 0;
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width:400px) {
+
+    .bio {
+        padding: 0 15px;
+        min-width: 300px;
+    }
+
+    .bio .title {
+        font-size: 40px;
+    }
+
+    .bio p {
+        font-size: 18px;
+    }
+}
